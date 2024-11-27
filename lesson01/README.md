@@ -1,210 +1,126 @@
-### Task 1: Magic Numbers
-A "magic number" is a number that satisfies the following conditions:
+# Programming Competition Tasks
 
-It is a three-digit number.
-The sum of its digits is divisible by 5.
-The product of its digits is an odd number.
-Problem:
-How many magic numbers exist?
+## Task 1: Array Rotation
+### Story:
+You are given an array `a` representing the levels of your favorite video game. In each level, you need to rotate the array left by one position to unlock new challenges. However, the levels are numbered in such a way that they must be in non-decreasing order to pass the game. You can rotate the array at most `k` times, and you need to figure out if it is possible to make the array sorted by doing the rotations. If it is possible, return the minimum number of rotations needed, otherwise, return -1.
 
+### Input:
+- An integer `n` representing the length of the array.
+- An integer `k` representing the maximum number of rotations allowed.
+- An array `a` of length `n` containing integers.
+
+### Output:
+- Return the minimum number of rotations needed to sort the array, or `-1` if it is not possible.
+
+### Constraints:
+- `1 ≤ n ≤ 1000`
+- `0 ≤ k ≤ n`
+
+### Example:
 #### Input:
-None (the task is independent of input).
-
+```
+7
+4 2 3 4 5 1 2
+```
 #### Output:
-Output the total number of magic numbers.
 
-#### Example:
-For a three-digit number:
 
-The number 135 is magic because:
-Sum of digits = 1 + 3 + 5 = 9 (not divisible by 5, so not magic).
-Product = 1 × 3 × 5 = 15 (odd, satisfies condition 3).
+---
 
-### Task 2: Divisible Coins
-You are given n coins, where each coin has a value of 1, 2, or 3. Your goal is to determine if it's possible to divide the coins into two groups such that the sum of values in both groups is equal.
+## Task 2: Minimum Swaps to Sort
+### Story:
+In a small village, there is a group of children who are playing a game with numbered cards. The children need to line up in ascending order by card number, but some children are not standing in the right order. The teacher allows them to swap cards with one another to get into the correct order. Your task is to find the minimum number of swaps the children need to make to line up in ascending order.
 
+### Input:
+- An integer `n` representing the number of children (maximum `1000`).
+- An array `a` of length `n` containing the card numbers.
+
+### Output:
+- Return the minimum number of swaps needed to sort the array in ascending order.
+
+### Constraints:
+- `1 ≤ n ≤ 1000`
+
+### Example:
 #### Input:
-A single integer n (1 ≤ n ≤ 100) representing the number of coins.
-The second line contains n integers (1, 2, or 3) representing the value of each coin. 
-#### Output:
-Print YES if it's possible to divide the coins into two groups with equal sums, otherwise print NO.
-
-#### Example:
-Input:
-```
-4
-1 2 3 2
-```
-Output:
-```
-YES
-```
-
-### Task 3: Chocolate Bars
-You have a chocolate bar consisting of n × m squares. You can break the chocolate into smaller pieces along the lines between the squares. Each break splits one piece into two smaller pieces, and it costs 1 unit of energy.
-
-#### Problem:
-Determine the minimum energy required to break the entire chocolate into 1 × 1 squares.
-
-#### Input:
-Two integers n and m (1 ≤ n, m ≤ 100), representing the dimensions of the chocolate bar.
-#### Output:
-Output a single integer, the minimum energy required to break the chocolate.
-
-#### Example:
-Input:
-```
-2 3
-```
-Output:
-```
-5
-```
-
-### Task 4: Arranging Books
-There are n books, and each book has a unique number from 1 to n written on its spine. The books are arranged on a shelf in some random order. Your goal is to sort the books so that their numbers are in ascending order (1, 2, ..., n), but you can only swap two adjacent books in one move.
-
-#### Problem:
-Determine the minimum number of swaps needed to sort the books.
-
-#### Input:
-The first line contains an integer n (1 ≤ n ≤ 100), the number of books.
-The second line contains n integers, representing the current arrangement of the books.
-#### Output:
-Output a single integer, the minimum number of adjacent swaps required.
-
-#### Example:
-Input:
-```
-5
-4 3 2 5 1
-```
-Output:
-```
-8
-```
-
-### Task 5: Flower Picking with a Basket
-You have a garden with n flowers in a straight line, each with a beauty value bᵢ (positive or negative). You also have a basket that can hold at most m flowers. You want to pick a continuous segment of flowers such that the sum of their beauty values is maximized, while ensuring that the segment contains no more than m flowers.
-
-#### Problem:
-Find the maximum sum of beauty values that can be obtained from any continuous segment of at most m flowers.
-
-#### Input:
-The first line contains two integers n and m (1 ≤ m ≤ n ≤ 10000), where n is the number of flowers and m is the basket capacity (maximum number of flowers you can pick).
-The second line contains n integers bᵢ (-100000 ≤ bᵢ ≤ 100000), the beauty values of the flowers.
-#### Output:
-Output a single integer, the maximum sum of beauty values.
-
-#### Example:
-Input:
-```
-6 3
--2 4 -1 3 5 -6 1
-```
-Output:
-```
-12
-```
-
-### Task 6: Shuffling a Deck
-You are given a deck of n cards, each with a unique number from 1 to n, shuffled in a random order. Your goal is to return the deck to its sorted order (1, 2, ..., n) using a special shuffle operation.
-
-#### Special Shuffle Operation:
-In one operation, you can split the deck into two contiguous segments and reverse the order of one of these segments.
-#### Problem:
-You are allowed to perform at most n operations to sort the deck. After each operation, output the current state of the deck.
-Any correct way to sort the list is acceptable, as long as the number of iterations does not exceed n.
-
-#### Goal:
-Return a list of lists, where each list represents the state of the deck after an operation.
-The final list must represent the sorted deck.
-#### Input:
-The first line contains an integer n (2 ≤ n ≤ 100), the number of cards.
-The second line contains n integers, representing the current shuffled order of the deck.
-#### Output:
-Output a list of lists, where each list represents the deck state after one operation. If the deck is sorted before using n or less operations, stop the process.
-
-#### Example:
-Input:
-```
-5
-3 2 5 4 1
-```
-Output:
-```
-3 2 5 4 1
-2 3 5 4 1
-2 3 5 1 4
-1 2 3 4 5
-```
-
-#### Explanation:
-Start with the shuffled deck [3, 2, 5, 4, 1].
-Split into [3, 2] and [5, 4, 1], reverse [3, 2] → [2, 3], resulting in [2, 3, 5, 4, 1].
-Split into [2, 3, 5] and [4, 1], reverse [4, 1] → [1, 4], resulting in [2, 3, 5, 1, 4].
-Split into [2, 3] and [5, 1, 4], reverse [5, 1, 4] → [4, 1, 5], resulting in [1, 2, 3, 4, 5].
-The process stops since the deck is now sorted.
-
-### Task 7: Permutations with Missing Digits
-You are given a sequence of n integers, which is supposed to represent a permutation of numbers from 1 to n. However, some numbers are missing from the sequence and replaced with a question mark (?). Your task is to fill in the missing numbers to form a valid permutation.
-
-#### Input:
-The first line contains a single integer n (2 ≤ n ≤ 12), the size of the permutation.
-The second line contains n integers, where some of the numbers are ?, representing the missing values.
-#### Output:
-Output a single line containing the valid permutation. If there are multiple valid solutions, output any one of them. If it's not possible to construct a valid permutation, output NO.
-
-#### Example 1:
-Input:
-```
-5
-3 ? 1 ? 5
-```
-Output:
-```
-3 4 1 2 5
-```
-#### Example 2:
-Input:
-```
-4
-? 3 ? 3
-```
-Output:
-```
-NO
-```
-
-### Task 8: Balanced Subarray
-You are given an array of n integers, which contains only 1s and -1s. Your task is to find the longest subarray in which the sum of elements is exactly 0.
-
-#### Input:
-The first line contains an integer n (2 ≤ n ≤ 100), the size of the array.
-The second line contains n integers, each either 1 or -1, representing the array.
-#### Output:
-Output a single integer: the length of the longest subarray with a sum of 0. If no such subarray exists, output 0.
-
-#### Example 1:
-Input:
-```
-8
-1 -1 1 -1 -1 1 1 -1
-```
-
-Output:
-```
-8
-```
-#### Example 2:
-Input:
-
 ```
 6
-1 1 -1 -1 1 -1
+5 5 4 3 2 1
 ```
+#### Output:
 
-Output:
-```
-4
-```
+---
+
+## Task 3: String Compression
+### Story:
+Peter is trying to save space on his device by compressing a long string of text. He comes up with a simple compression method: for each sequence of identical characters, he replaces them with the character followed by the number of times it appears consecutively. For example, `"aaabbbcc"` would be compressed to `"a3b3c2"`. Can you help Peter compress his string efficiently?
+
+### Input:
+- A string `s` of length `n` containing lowercase English letters.
+
+### Output:
+- Return the compressed string.
+
+### Constraints:
+- `1 ≤ n ≤ 1000`
+
+### Example:
+#### Input:
+
+#### Output:
+
+---
+
+## Task 3: String Compression
+### Story:
+Peter is trying to save space on his device by compressing a long string of text. He comes up with a simple compression method: for each sequence of identical characters, he replaces them with the character followed by the number of times it appears consecutively. For example, `"aaabbbcc"` would be compressed to `"a3b3c2"`. Can you help Peter compress his string efficiently?
+
+### Input:
+- A string `s` of length `n` containing lowercase English letters.
+
+### Output:
+- Return the compressed string.
+
+### Constraints:
+- `1 ≤ n ≤ 1000`
+
+### Example:
+#### Input:
+
+#### Output:
+
+---
+
+## Task 4: Prawn Path
+### Story:
+You are given a 2xN desk, and a prawn starts at the bottom-left corner (position `(1, 0)`). The prawn can move either vertically or diagonally. It can "eat" the opposite prawn by moving diagonally to a cell where a prawn is located (denoted by 'X'). Additionally, the prawn can move vertically to a cell with 'X', in which case it will simply move to the 'X' without "eating" it. The prawn cannot move through cells with '.'.
+
+Your goal is to calculate how many different ways the prawn can travel from the bottom-left corner to the top-right corner of the grid, while avoiding paths that lead to blocked or inaccessible cells.
+
+### Movement rules for the prawn:
+- **Vertical move**: The prawn can move up or down from its current position to an adjacent cell, whether the cell contains '.' or 'X'.
+- **Diagonal move**: The prawn can move diagonally to a cell containing 'X' (where it "eats" the prawn). The prawn cannot move diagonally to a cell with '.'.
+
+### Input:
+- An integer `n` (1 ≤ n ≤ 50), representing the width of the desk (2xN grid).
+- The next `n` lines describe the 2xN grid. Each line will contain exactly two characters: either '.' (empty space where the prawn can move) or 'X' (occupied space where the prawn cannot move).
+  - The prawn starts at the bottom-left corner `(1, 0)`.
+  - The goal is to reach the top-right corner `(0, n-1)`.
+
+### Output:
+- Output a single integer: the number of different ways the prawn can travel from the bottom-left corner to the top-right corner.
+
+### Constraints:
+- The grid has dimensions 2xN, where 1 ≤ N ≤ 50.
+- The input grid will be valid with only '.' and 'X' characters.
+
+### Example:
+#### Input:
+
+#### Output:
+
+---
+
+### Notes:
+- For each task, ensure to test with edge cases like small grid sizes, sorted input, or strings with repeating characters.
+- These tasks can be implemented using different algorithmic approaches including dynamic programming, greedy methods, and graph traversal techniques.
