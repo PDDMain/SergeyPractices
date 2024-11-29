@@ -81,7 +81,7 @@ Input:
 ```
 Output:
 ```
-8
+7
 ```
 
 ### Task 5: Flower Picking with a Basket
@@ -107,104 +107,3 @@ Output:
 12
 ```
 
-### Task 6: Shuffling a Deck
-You are given a deck of n cards, each with a unique number from 1 to n, shuffled in a random order. Your goal is to return the deck to its sorted order (1, 2, ..., n) using a special shuffle operation.
-
-#### Special Shuffle Operation:
-In one operation, you can split the deck into two contiguous segments and reverse the order of one of these segments.
-#### Problem:
-You are allowed to perform at most n operations to sort the deck. After each operation, output the current state of the deck.
-Any correct way to sort the list is acceptable, as long as the number of iterations does not exceed n.
-
-#### Goal:
-Return a list of lists, where each list represents the state of the deck after an operation.
-The final list must represent the sorted deck.
-#### Input:
-The first line contains an integer n (2 ≤ n ≤ 100), the number of cards.
-The second line contains n integers, representing the current shuffled order of the deck.
-#### Output:
-Output a list of lists, where each list represents the deck state after one operation. If the deck is sorted before using n or less operations, stop the process.
-
-#### Example:
-Input:
-```
-5
-3 2 5 4 1
-```
-Output:
-```
-3 2 5 4 1
-2 3 5 4 1
-2 3 5 1 4
-1 2 3 4 5
-```
-
-#### Explanation:
-Start with the shuffled deck [3, 2, 5, 4, 1].
-Split into [3, 2] and [5, 4, 1], reverse [3, 2] → [2, 3], resulting in [2, 3, 5, 4, 1].
-Split into [2, 3, 5] and [4, 1], reverse [4, 1] → [1, 4], resulting in [2, 3, 5, 1, 4].
-Split into [2, 3] and [5, 1, 4], reverse [5, 1, 4] → [4, 1, 5], resulting in [1, 2, 3, 4, 5].
-The process stops since the deck is now sorted.
-
-### Task 7: Permutations with Missing Digits
-You are given a sequence of n integers, which is supposed to represent a permutation of numbers from 1 to n. However, some numbers are missing from the sequence and replaced with a question mark (?). Your task is to fill in the missing numbers to form a valid permutation.
-
-#### Input:
-The first line contains a single integer n (2 ≤ n ≤ 12), the size of the permutation.
-The second line contains n integers, where some of the numbers are ?, representing the missing values.
-#### Output:
-Output a single line containing the valid permutation. If there are multiple valid solutions, output any one of them. If it's not possible to construct a valid permutation, output NO.
-
-#### Example 1:
-Input:
-```
-5
-3 ? 1 ? 5
-```
-Output:
-```
-3 4 1 2 5
-```
-#### Example 2:
-Input:
-```
-4
-? 3 ? 3
-```
-Output:
-```
-NO
-```
-
-### Task 8: Balanced Subarray
-You are given an array of n integers, which contains only 1s and -1s. Your task is to find the longest subarray in which the sum of elements is exactly 0.
-
-#### Input:
-The first line contains an integer n (2 ≤ n ≤ 100), the size of the array.
-The second line contains n integers, each either 1 or -1, representing the array.
-#### Output:
-Output a single integer: the length of the longest subarray with a sum of 0. If no such subarray exists, output 0.
-
-#### Example 1:
-Input:
-```
-8
-1 -1 1 -1 -1 1 1 -1
-```
-
-Output:
-```
-8
-```
-#### Example 2:
-Input:
-
-```
-6
-1 1 -1 -1 1 -1
-```
-
-Output:
-```
-4
-```

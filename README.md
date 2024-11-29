@@ -5,6 +5,7 @@
 
 ## HWs
 * [HW 27/11](hw01)
+* [HW 04/12](hw02)
 
 ## Lectures
 ### Youtube

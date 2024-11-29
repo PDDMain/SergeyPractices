@@ -1,126 +1,126 @@
-# Programming Competition Tasks
+## Set
+### Task 1: Unique Elements in Two Lists
+#### Problem:
+You are given two lists of integers, A and B. Your task is to find:
 
-## Task 1: Array Rotation
-### Story:
-You are given an array `a` representing the levels of your favorite video game. In each level, you need to rotate the array left by one position to unlock new challenges. However, the levels are numbered in such a way that they must be in non-decreasing order to pass the game. You can rotate the array at most `k` times, and you need to figure out if it is possible to make the array sorted by doing the rotations. If it is possible, return the minimum number of rotations needed, otherwise, return -1.
+The set of elements that are present in both lists (intersection).
+The set of elements that are present in either list but not both (symmetric difference).
+The set of elements that are unique to A (elements in A but not in B).
+Write a program that computes and outputs these three sets.
 
-### Input:
-- An integer `n` representing the length of the array.
-- An integer `k` representing the maximum number of rotations allowed.
-- An array `a` of length `n` containing integers.
-
-### Output:
-- Return the minimum number of rotations needed to sort the array, or `-1` if it is not possible.
-
-### Constraints:
-- `1 ≤ n ≤ 1000`
-- `0 ≤ k ≤ n`
-
-### Example:
 #### Input:
+The first line contains the integers in list A (space-separated).
+The second line contains the integers in list B (space-separated).
+
+#### Output:
+Three lines:
+The intersection of A and B.
+The symmetric difference of A and B.
+The elements unique to A.
+
+#### Example Input:
+
+```
+1 2 3 4 36
+3 4 5 6 -34
+```
+#### Example Output:
+
+```
+{3, 4}
+{-34, 1, 2, 5, 6, 36}
+{1, 2, 36}
+```
+
+### Task 2: Count Unique Words
+#### Problem:
+You are given a paragraph of text containing multiple sentences. Your task is to count the number of unique words in the text, ignoring case and punctuation.
+
+#### Input:
+
+A single string containing the paragraph.
+#### Output:
+
+An integer representing the count of unique words.
+#### Example Input:
+
+```
+The quick brown fox jumps over the lazy dog. The fox was very quick!
+```
+
+#### Example Output:
 ```
 7
-4 2 3 4 5 1 2
 ```
-#### Output:
+**Explanation**: After removing punctuation and ignoring case, the unique words are: {'brown', 'jumps', 'over', 'lazy', 'dog', 'was', 'very'}.
 
+## Dict
+### Task 3: Inventory Management
+#### Story:
+A small store keeps track of its inventory using a dictionary. The owner wants to perform the following operations:
 
----
+Add new items to the inventory.
+Update the quantity of existing items.
+Find the total quantity of concrete type of items in stock.
 
-## Task 2: Minimum Swaps to Sort
-### Story:
-In a small village, there is a group of children who are playing a game with numbered cards. The children need to line up in ascending order by card number, but some children are not standing in the right order. The teacher allows them to swap cards with one another to get into the correct order. Your task is to find the minimum number of swaps the children need to make to line up in ascending order.
+#### Task:
+Write a program to help the store owner manage their inventory.
 
-### Input:
-- An integer `n` representing the number of children (maximum `1000`).
-- An array `a` of length `n` containing the card numbers.
-
-### Output:
-- Return the minimum number of swaps needed to sort the array in ascending order.
-
-### Constraints:
-- `1 ≤ n ≤ 1000`
-
-### Example:
 #### Input:
+
+The first line contains an integer n (1 ≤ n ≤ 100), the number of operations.
+Each of the next n lines describes an operation:
+"ADD <item> <quantity>" to add a new item or increase the quantity of an existing item.
+"REMOVE <item> <quantity>" to decrease the quantity of an item (but not below zero).
+"TOTAL <item>" to calculate the total quantity of items.
+Quantity of items in the store isn't negative
+
+#### Output:
+For each "TOTAL <item>" operation, output the total quantity of items in stock.
+
+#### Example Input:
 ```
 6
-5 5 4 3 2 1
+ADD apples 10
+ADD bananas 5
+REMOVE apples 3
+ADD oranges 7
+TOTAL apples
+ADD bananas 2
+REMOVE bananas 2
+TOTAL bananas
 ```
-#### Output:
 
----
+Example Output:
+```
+7
+5
+```
 
-## Task 3: String Compression
-### Story:
-Peter is trying to save space on his device by compressing a long string of text. He comes up with a simple compression method: for each sequence of identical characters, he replaces them with the character followed by the number of times it appears consecutively. For example, `"aaabbbcc"` would be compressed to `"a3b3c2"`. Can you help Peter compress his string efficiently?
+### Task 4: Word Frequency Counter
+#### Story:
+A librarian wants to analyze the text of a book to determine the most frequently used words. The librarian ignores case and punctuation, and considers only words with at least three characters.
 
-### Input:
-- A string `s` of length `n` containing lowercase English letters.
+#### Task:
+Write a program that counts the frequency of each word in a paragraph and identifies the top k most frequent words.
 
-### Output:
-- Return the compressed string.
-
-### Constraints:
-- `1 ≤ n ≤ 1000`
-
-### Example:
 #### Input:
 
+A single string containing the paragraph.
+An integer k (1 ≤ k ≤ 10), the number of top words to display.
 #### Output:
 
----
+A list of the k most frequent words and frequency in text, sorted by frequency in descending order (if frequencies are equal, sort alphabetically). 
+#### Example Input:
+```
+The quick brown fox jumps over the lazy dog. The fox was very quick.
+3
+```
 
-## Task 3: String Compression
-### Story:
-Peter is trying to save space on his device by compressing a long string of text. He comes up with a simple compression method: for each sequence of identical characters, he replaces them with the character followed by the number of times it appears consecutively. For example, `"aaabbbcc"` would be compressed to `"a3b3c2"`. Can you help Peter compress his string efficiently?
+#### Example Output:
 
-### Input:
-- A string `s` of length `n` containing lowercase English letters.
-
-### Output:
-- Return the compressed string.
-
-### Constraints:
-- `1 ≤ n ≤ 1000`
-
-### Example:
-#### Input:
-
-#### Output:
-
----
-
-## Task 4: Prawn Path
-### Story:
-You are given a 2xN desk, and a prawn starts at the bottom-left corner (position `(1, 0)`). The prawn can move either vertically or diagonally. It can "eat" the opposite prawn by moving diagonally to a cell where a prawn is located (denoted by 'X'). Additionally, the prawn can move vertically to a cell with 'X', in which case it will simply move to the 'X' without "eating" it. The prawn cannot move through cells with '.'.
-
-Your goal is to calculate how many different ways the prawn can travel from the bottom-left corner to the top-right corner of the grid, while avoiding paths that lead to blocked or inaccessible cells.
-
-### Movement rules for the prawn:
-- **Vertical move**: The prawn can move up or down from its current position to an adjacent cell, whether the cell contains '.' or 'X'.
-- **Diagonal move**: The prawn can move diagonally to a cell containing 'X' (where it "eats" the prawn). The prawn cannot move diagonally to a cell with '.'.
-
-### Input:
-- An integer `n` (1 ≤ n ≤ 50), representing the width of the desk (2xN grid).
-- The next `n` lines describe the 2xN grid. Each line will contain exactly two characters: either '.' (empty space where the prawn can move) or 'X' (occupied space where the prawn cannot move).
-  - The prawn starts at the bottom-left corner `(1, 0)`.
-  - The goal is to reach the top-right corner `(0, n-1)`.
-
-### Output:
-- Output a single integer: the number of different ways the prawn can travel from the bottom-left corner to the top-right corner.
-
-### Constraints:
-- The grid has dimensions 2xN, where 1 ≤ N ≤ 50.
-- The input grid will be valid with only '.' and 'X' characters.
-
-### Example:
-#### Input:
-
-#### Output:
-
----
-
-### Notes:
-- For each task, ensure to test with edge cases like small grid sizes, sorted input, or strings with repeating characters.
-- These tasks can be implemented using different algorithmic approaches including dynamic programming, greedy methods, and graph traversal techniques.
+```
+the 3
+fox 2
+quick 2
+```
