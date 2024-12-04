@@ -110,6 +110,7 @@ def test_solution():
     # Case 12: Random mixes
     assert solution(10, 5, 3) == True  # Balanced split possible
     assert solution(7, 2, 4) == False  # Total sum = 21, odd
+    assert solution(8, 2, 4) == True
 
     print("All tests passed!")
 
