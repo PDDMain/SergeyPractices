@@ -1,0 +1,41 @@
+name: Check task2.py Output
+
+on:
+  push:
+    paths:
+      - "lesson01/task2.py"
+  pull_request:
+    paths:
+      - "task2.py"
+
+jobs:
+  run-task2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt || echo "No requirements found"
+
+      - name: Run task2.py
+        id: run_task
+        run: |
+          python task2.py > output.txt
+          cat output.txt
+
+      - name: Check Output
+        run: |
+          if grep -q "All tests passed!" output.txt; then
+            echo "Tests passed."
+          else
+            echo "Tests failed."
+            exit 1
+        shell: bash
