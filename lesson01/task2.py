@@ -114,6 +114,5 @@ def test_solution():
 
     print("All tests passed!")
 
-
 # Run the test function
 test_solution()

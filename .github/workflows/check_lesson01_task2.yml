@@ -28,7 +28,7 @@ jobs:
       - name: Run task2.py
         id: run_task
         run: |
-          python lesson01/task2.py > output.txt
+          python task2.py > output.txt
           cat output.txt
 
       - name: Check Output
