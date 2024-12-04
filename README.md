@@ -17,5 +17,5 @@
 * [Course "Python"](https://stepik.org/course/67/syllabus)
 
 ## Additional materials
+* [Instruction about git installation](/git_instruction.md)
 * [GIT wikibook](https://ru.wikibooks.org/wiki/Git)
-* 
