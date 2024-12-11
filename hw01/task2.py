@@ -81,8 +81,8 @@ def test_solution():
     assert solution(0, 0, 5) == False  # Cannot split into two equal groups
 
     # Case 5: Mixed, edge values
-    assert solution(1, 1, 1) == False  # Total = 6, no equal split
-    assert solution(2, 1, 1) == True  # [3, 1] vs [2, 2]
+    assert solution(1, 1, 1) == True  # Total = 6, no equal split
+    assert solution(1, 2, 1) == True  # [3, 1] vs [2, 2]
 
     # Case 6: No coins at all
     assert solution(0, 0, 0) == True  # Both groups are empty
@@ -108,7 +108,7 @@ def test_solution():
     assert solution(0, 0, 0) == True  # Empty groups are equal
 
     # Case 12: Random mixes
-    assert solution(10, 5, 3) == True  # Balanced split possible
+    assert solution(11, 5, 3) == True  # Balanced split possible
     assert solution(7, 2, 4) == False  # Total sum = 21, odd
     assert solution(8, 2, 4) == True
 
