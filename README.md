@@ -1,4 +1,7 @@
 # SergeyPractices
+## How to upload Homework
+* [Create Pull request via GitHub webpage](github_instructions.md)
+
 ## Lessons
 * [Previous year tasks](lesson00)
 * [Lesson 27/11](lesson01)
@@ -6,6 +9,8 @@
 ## HWs
 * [HW 27/11](hw01)
 * [HW 04/12](hw02)
+* [HW 11/12](hw03)
+* [HW 18/12](hw04)
 
 ## Lectures
 ### Youtube

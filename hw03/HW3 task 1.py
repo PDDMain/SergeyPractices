@@ -13,6 +13,7 @@ while len(a) and len(b):
     if a[i] > b[j]:
         result = add_to_result(b[j], result)
         j += 1
+        # b.remove(j)
     else:
         result = add_to_result(a[i], result)
         i += 1
@@ -20,5 +21,5 @@ result += a+b
 print(result)
 
 # wrong
-# 1 3 5 7
-# 2 3 5 8
+# 1 3 5 7 +INF
+# 2 3 5 8 +INF

@@ -84,196 +84,133 @@ Given a sorted array of integers and a target sum, determine if there exists a p
 -1
 ```
 
-# Dynamic Programming Tasks
+## Task 4
+* Fix HW 3 task 4
 
-## Task 1: Fibonacci Sequence
+## [Task 5](https://codeforces.com/group/cNX0FWzXMV/contest/570318/problem/G)
+* Fix
+
+## Task 6: Longest Increasing Subsequence (Length Only)
 
 **Problem:**  
-Write a program to compute the nth Fibonacci number using dynamic programming. The Fibonacci sequence is defined as:
-
-```
-Fib(0) = 0  
-Fib(1) = 1  
-Fib(n) = Fib(n-1) + Fib(n-2) for n > 1  
-```
+Given a list of integers, find the length of the longest strictly increasing subsequence.
 
 **Input:**  
-A single integer n (0 ≤ n ≤ 30).
+A single line containing the integers in the list (space-separated).
 
 **Output:**  
-A single integer representing the nth Fibonacci number.
+A single integer representing the length of the longest increasing subsequence.
 
 **Example Input:**  
 ```
-7  
+10 9 2 3 7 101 18
 ```
 
 **Example Output:**  
 ```
-13  
+4
+```
+
+**Explanation:**  
+One longest increasing subsequence is [2, 3, 7, 101], which has length 4.
+
+---
+
+## Task 7: All Substrings With Exactly K Distinct Characters
+
+**Problem:**  
+Given a string S and an integer K, find all unique substrings of S that contain exactly K distinct characters. Print these substrings in lexicographical (alphabetical) order, one per line.
+
+**Input:**  
+A single line containing the string S.  
+A single integer K.
+
+**Output:**  
+Print each qualifying substring on its own line, sorted lexicographically. If no such substrings exist, print nothing.
+
+**Example Input:**  
+```
+abacab
+3
+```
+
+**Example Output:**  
+```
+abc
+bac
+cab
 ```
 
 ---
 
-## Task 2: Climbing Stairs
+## Task 8: Minimize Absolute Difference Between Two Sorted Arrays
 
 **Problem:**  
-You are climbing a staircase that has n steps. You can either climb 1 or 2 steps at a time. Write a program to determine how many distinct ways you can climb to the top.
+You are given two sorted arrays A and B. The goal is to find two elements, one from each array, such that their absolute difference is minimized. More formally, find a[i] in A and b[j] B that minimize |a[i] - b[j]|.
 
 **Input:**  
-A single integer n (1 ≤ n ≤ 30).
+Two lines:  
+- The first line contains the integers of the sorted array A (space-separated).  
+- The second line contains the integers of the sorted array B (space-separated).
 
 **Output:**  
-A single integer representing the number of distinct ways to climb to the top.
+Two integers, one from each array, that minimize the absolute difference. If there are multiple pairs, return any one of them.
 
 **Example Input:**  
 ```
-4  
+1 3 15 11 2
+23 127 235 19 8
 ```
 
 **Example Output:**  
 ```
-5  
+11 8
 ```
 
-**Explanation:** The five ways to climb to the top are:
-- 1 step + 1 step + 1 step + 1 step  
-- 1 step + 1 step + 2 steps  
-- 1 step + 2 steps + 1 step  
-- 2 steps + 1 step + 1 step  
-- 2 steps + 2 steps  
+**Explanation:**  
+The pair (11, 8) minimizes the absolute difference with a value of 3.
 
+---
 
-## Task 3: Climbing Stairs with Dangerous Rocks
+## Task 9: Board Game Player Movement
 
-**Description:**
+**Problem:**  
+In this board game, there is an infinite line of cells. Two players start at cell 1. Each player rolls a die (with numbers 1 to 6) to move forward. If a player’s move would place them on the same cell as the other player, they stay in their current position instead. Given the dice rolls for each player, determine the final positions of both players.
 
-You are climbing a staircase with **n** steps, but some steps are dangerous, and you cannot step on them. The status of each step is given in a list where:
+**Input:**  
+Two lines:  
+- The first line contains the dice rolls for Player 1 (space-separated integers between 1 and 6).  
+- The second line contains the dice rolls for Player 2 (space-separated integers between 1 and 6).
 
-- `D` indicates the step is safe.
-- `|` indicates the step is dangerous and cannot be stepped on.
+**Output:**  
+Two integers representing the final positions of Player 1 and Player 2.
 
-You can climb either 1 step or 2 steps at a time. Determine the number of distinct ways you can safely reach the top of the staircase.
-
-**Input Format:**
-
-1. An integer \( n \), representing the number of steps in the staircase.
-2. A list of \( n \) characters where:
-   - `D` represents a safe step.
-   - `|` represents a dangerous step.
-
-**Constraints:**
-
-- \( 1 \leq n \leq 100 \)
-- The input will always ensure that:
-  - The first step is `D` (safe).
-  - The last step is `D` (safe).
-  - Neighbour rocks cannot be both unsafe
-
-**Output:**
-
-An integer representing the number of distinct ways to reach the top of the staircase while avoiding dangerous steps.
-
-**Example:**
-
-- **Input:**
+**Example Input 1:**  
 ```
-6
-DD|DDD
+1 2 3
+2 3 4
 ```
 
-- **Output:**
+**Example Output 1:**  
 ```
-2
-```
-
-## Task 4: Climbing Stairs with Dangerous Rocks and Maximum Coins
-
-**Description:**
-
-You are climbing a staircase with **n** steps. Each step is either dangerous or safe, and every step has a certain number of coins. Your goal is to collect the maximum number of coins while safely reaching the top of the staircase.
-
-- `D c`: A safe step with **c** coins.
-- `|`: A dangerous step that cannot be stepped on.
-
-You can climb either 1 step or 2 steps at a time. Determine the **maximum number of coins** you can collect while safely reaching the top of the staircase.
-
-**Input Format:**
-
-1. An integer \( n \), representing the number of steps in the staircase.
-2. A list of \( n \) strings where:
-   - Each string is either `D c` (safe step with \( c \) coins) or `|` (dangerous step).
-
-**Constraints:**
-
-- \( 1 \leq n \leq 100 \)
-- The input will always ensure that:
-  - The first step is safe (`D c`).
-  - The last step is safe (`D c`).
-- \( 0 \leq c \leq 100 \) (coins on a step).
-
-**Output:**
-
-An integer representing the **maximum number of coins** that can be collected while safely reaching the top of the staircase.
-
-**Example:**
-
-- **Input:**
-```
-6 
-D 1
-D 2 
-|
-D 4
-D 6
-D 3
+6 5
 ```
 
-- **Output:** 
+**Explanation:**  
+- Player 1 moves: 1 (to 2), 2 (to 4), 3 (to 6).  
+- Player 2 moves: 2 (to 3), 3 (to 5). On their third roll, they would land on cell 6, but Player 1 is already there, so they stay at 5.
+
+**Example Input 2:**  
 ```
-12
+1 1 2 6 4
+2 1 5 1 2
 ```
 
-## Task 5: Jumping Stairs with Dangerous Rocks and Maximum Coins
-The same as **task 4**, but You can climb either 2 step or 3 steps at a time
-
-- **Input:**
+**Example Output 2:**  
 ```
-9
-D 2
-D 1
-D 2 
-D 3
-|
-D 10
-D 6
-D 1
-D 10
+6 5
 ```
 
-- **Output:** 
-```
-24
-```
-
-## Task 6: Jumping Stairs with Dangerous Rocks and Maximum Coins
-The same as **task 5**, but instead of printing maximum amount of coins - print sequence of indexes of visited rocks
-
-- **Input:**
-```
-9
-D 2
-D 1
-D 2 
-D 3
-|
-D 10
-D 6
-D 1
-D 10
-```
-
-- **Output:** 
-```
-1 3 6 9
-```
+- Player 1 moves: 1 (to 2), 1 (stays 2, here is player 2), 2 (stays 2, here is player 2), 6 (to 8), 4 (to 12)
+- Player 2 moves: 2 (to 3), 1 (to 4), 5 (to 9), 1 (to 10), 2 (stays 10, here is player 1)
+---
