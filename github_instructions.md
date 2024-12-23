@@ -71,3 +71,22 @@ Follow the steps below to create a pull request using the GitHub interface. Ensu
 ---
 
 You have successfully created a pull request!
+
+## How to Modify a File via GitHub UI
+1. **Navigate to the Repository and Branch:**
+* Go to your GitHub repository. 
+* Use the branch selector in the upper-left corner to ensure you are on the correct branch.
+2. **Locate the File:**
+* Browse the repository to find the file you want to edit.
+3. **Edit the File:**
+* Click the file name to open it. 
+* Click the pencil icon (✏️) in the upper-right corner of the file view. This opens the file editor.
+4. **Make Changes:**
+* Modify the content of the file as needed directly in the editor.
+5. **Commit Your Changes:**
+* Scroll to the bottom of the editor. 
+* Add a descriptive commit message summarizing your changes.
+* Optionally, include a more detailed description in the larger text area.
+* Ensure Commit directly to this branch is selected if working on your branch, or choose to create a new branch for these changes.
+6. **Save Changes:**
+* Click Commit changes to save your edits.
