@@ -1,19 +1,17 @@
-# 12 min
 n = int(input())
 the_input = input()
-steps = []
-for i in the_input:
-    if i == "|":
-        steps.append(False)
-    else:
-        steps.append(True)
-if len(steps) > 1:
-    options = [1, int(steps[1])]
-    for i in range(2, n):
-        if not steps[i]:
-            options.append(0)
-        else:
-            options.append(options[i-1] + options[i-2])
+previous_options = 1
+
+if n > 1 and the_input[1] == "D" or n == 1:
+    current_options = 1
 else:
-    options = [1]
-print(options[n-1])
+    current_options = 0
+
+for i in range(2, n):
+    current_options, previous_options = previous_options, current_options
+    if the_input[i] == "D":
+        current_options += previous_options
+    else:
+        current_options = 0
+
+print(current_options)
