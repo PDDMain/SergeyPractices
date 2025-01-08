@@ -291,7 +291,7 @@ xy
 
 ------------------------------------
 
-# Task 1: Symmetric Points with Respect to a Horizontal Line
+# Task 7: Symmetric Points with Respect to a Horizontal Line
 
 ## Problem Description
 You are given a set of points \((x, y)\) in a 2D plane. Determine if there exists a horizontal line (i.e., \(y = c\)) such that the set of points is symmetric with respect to that line.  
@@ -341,7 +341,7 @@ Formally, for every point \((x_i, y_i)\) above the line, there must be a corresp
 YES
 ```
 
-# Task 2: Lego Towers - Make Them Beautiful
+# Task 8: Lego Towers - Make Them Beautiful
 
 ## Problem Description
 Peter has a row of \(N\) towers, each with a certain height. A row of towers is called **"beautiful"** if for any two neighboring towers, their heights differ by at most 1. Peter has \(K\) extra blocks that he can use to **add** to the towers (but he cannot remove blocks). Determine if Peter can make the row beautiful by distributing these \(K\) blocks among the towers in some way.
@@ -385,7 +385,7 @@ Peter has a row of \(N\) towers, each with a certain height. A row of towers is 
 YES
 ```
 
-# Task 3: Magic House Teleports
+# Task 9: Magic House Teleports
 
 ## Problem Description
 You have a "magic house" with \(N\) rooms in a row, labeled from 1 to \(N\). Each room \(i\) has a teleport distance \(k_i\) associated with it. If you are in room \(i\), you can teleport to room \(i + k_i\). You start in room 1 and want to know if it is possible to reach room \(N\).
@@ -440,7 +440,7 @@ NO
 YES
 ```
 
-# Task 4: Fibbi's Program Reconstruction
+# Task 10: Fibbi's Program Reconstruction
 
 ## Problem Description
 Fibbi had a program in a simple language that produces a sequence of outputs. The language has:
@@ -499,7 +499,7 @@ FIBB
 PRINT
 ```
 
-# Daria the Hacker and Oliver's Mysterious Phone Number
+# Task 11: Daria the Hacker and Oliver's Mysterious Phone Number
 
 ## Problem Description
 Daria is a clever hacker on a quest to uncover her friend Oliver’s secret phone number. Oliver, who likes to tinker with web designs, built a quirky website that **initially** showed his real phone number. The website then lets anyone press one of two buttons:
