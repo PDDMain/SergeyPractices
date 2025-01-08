@@ -284,3 +284,265 @@ xy
 # Task 5: Gray Codes
 
 # Task 6: [Prime number](https://codeforces.com/group/cNX0FWzXMV/contest/573552/problem/G)
+
+------------------
+
+# Additional tasks
+
+------------------------------------
+
+# Task 1: Symmetric Points with Respect to a Horizontal Line
+
+## Problem Description
+You are given a set of points \((x, y)\) in a 2D plane. Determine if there exists a horizontal line (i.e., \(y = c\)) such that the set of points is symmetric with respect to that line.  
+Formally, for every point \((x_i, y_i)\) above the line, there must be a corresponding point \((x_i, 2c - y_i)\) below the line.
+
+**Goal**  
+- Print "YES" if such a horizontal line exists.
+- Print "NO" otherwise.
+
+---
+
+## Input Format
+1. An integer \(N\) representing the number of points.
+2. \(N\) lines follow, each with two integers \(x_i\) and \(y_i\).
+
+---
+
+## Output Format
+- "YES" if the points can be symmetrically divided by some horizontal line.
+- "NO" otherwise.
+
+---
+
+## Constraints
+- \(1 <= N <= 10^5\)
+- \(-10^9 <= x_i, y_i <+ 10^9\)
+
+*(You may adjust constraints depending on your solution approach.)*
+
+---
+
+## Example
+
+### Input
+```
+6
+0 1
+2 3
+2 -1
+-3 -3
+2 1
+-3 5
+```
+
+### Output
+```
+YES
+```
+
+# Task 2: Lego Towers - Make Them Beautiful
+
+## Problem Description
+Peter has a row of \(N\) towers, each with a certain height. A row of towers is called **"beautiful"** if for any two neighboring towers, their heights differ by at most 1. Peter has \(K\) extra blocks that he can use to **add** to the towers (but he cannot remove blocks). Determine if Peter can make the row beautiful by distributing these \(K\) blocks among the towers in some way.
+
+**Goal**  
+- Print "YES" if it’s possible to achieve the condition (neighboring towers differ in height by \(\leq 1\)).
+- Print "NO" otherwise.
+
+---
+
+## Input Format
+1. An integer \(N\) representing the number of towers.
+2. An integer \(K\) representing how many extra blocks are available.
+3. A list (or array) of \(N\) integers representing the heights of the towers.
+
+---
+
+## Output Format
+- "YES" if there is a way to make the row beautiful.
+- "NO" otherwise.
+
+---
+
+## Constraints
+- \(1 <= N <= 10^6\)
+- \(0 <= K <= 10^9\)
+- Tower heights are non-negative and can be up to 10^9.
+
+---
+
+## Example
+
+### Input
+```
+5 3 
+2 2 3 5 6
+```
+
+### Output
+```
+YES
+```
+
+# Task 3: Magic House Teleports
+
+## Problem Description
+You have a "magic house" with \(N\) rooms in a row, labeled from 1 to \(N\). Each room \(i\) has a teleport distance \(k_i\) associated with it. If you are in room \(i\), you can teleport to room \(i + k_i\). You start in room 1 and want to know if it is possible to reach room \(N\).
+
+**Goal**  
+- Print "YES" if you can reach room \(N\).
+- Print "NO" otherwise.
+
+---
+
+## Input Format
+1. An integer \(N\), the number of rooms.
+2. A list of \(N\) integers \(k_1, k_2, ..., k_N\)
+
+---
+
+## Output Format
+- "YES" if room \(N\) is reachable from room 1.
+- "NO" otherwise.
+
+---
+
+## Constraints
+- \(1 <= N <= 10^6\)
+- \(-10^9 <= k_i <= 10^9\)
+
+*(You may adjust constraints depending on your solution approach.)*
+
+---
+
+## Examples
+
+### Input
+```
+5 
+1 1 1 2 2
+```
+
+### Output
+```
+NO
+```
+
+### Input
+```
+5 
+3 3 0 -2 2
+```
+
+### Output
+```
+YES
+```
+
+# Task 4: Fibbi's Program Reconstruction
+
+## Problem Description
+Fibbi had a program in a simple language that produces a sequence of outputs. The language has:
+- One variable (`V`).
+- Two commands:
+  1. `PRINT` — prints the current value of `V`.
+  2. `FIBB` — updates `V` to be `V + prevV` (where `prevV` is the value of `V` from before the update).
+
+Initially:
+- `V = 1`
+- `prevV = 0` (the value of `V` before it ever got changed)
+
+You are given the **output** of this program (the sequence of integers printed). You must reconstruct **any valid sequence of commands** that could produce this output.
+
+**Goal**  
+Given the sequence of printed values, output a valid series of `PRINT` and `FIBB` commands that results in exactly that sequence of printed values.
+
+---
+
+## Input Format
+1. An integer \(L\), the length of the output sequence.
+2. \(L\) integers representing the printed values.
+
+---
+
+## Output Format
+- A sequence of commands (`PRINT` or `FIBB`) that produces the given printed values when run on the initial conditions.
+
+*(There may be multiple correct answers. Any valid solution is acceptable.)*
+
+---
+
+## Constraints
+- \(1 <= L <= 10^5\)
+- Printed values can be up to \(10^{18}\) (Fib-like growth can be large).
+
+---
+
+## Example
+
+### Input
+```
+3
+1 1 2 2 3
+```
+
+### Output
+```
+PRINT
+FIBB
+PRINT
+FIBB
+PRINT
+PRINT
+FIBB
+PRINT
+```
+
+# Daria the Hacker and Oliver's Mysterious Phone Number
+
+## Problem Description
+Daria is a clever hacker on a quest to uncover her friend Oliver’s secret phone number. Oliver, who likes to tinker with web designs, built a quirky website that **initially** showed his real phone number. The website then lets anyone press one of two buttons:
+
+1. **+10** – This button adds 10 to the current number on the screen.
+2. **×3** – This button multiplies the current number on the screen by 3.
+
+Over time, people (and Oliver himself) pressed these buttons in some sequence, transforming the phone number into the current (rather large or otherwise changed) number on the page.
+
+Daria has managed to **hack** into the website's logs, discovering the entire history of button presses **in the exact order** they occurred, as well as the **final** number currently displayed. But she needs to **work backwards** to figure out what the **original** phone number was.
+
+Her mission: **reconstruct Oliver’s hidden phone number**.
+
+---
+
+## Input Format
+1. An integer `F`, representing the **final** number displayed on the webpage.
+2. An integer `K`, the number of operations that were performed on the page.
+3. A list of `K` operations in the order they were applied (each operation is either `+10` or `×3`).
+
+---
+
+## Output Format
+Print a single integer: the **original** phone number (before any operations were applied).
+
+---
+
+## Constraints
+- \(1 <= K <= 10^5\)
+- The final number `F` can be very large (potentially up to \(10^{18}\) or beyond).
+- Each reverse step must result in an integer when reversing the “×3” operation, otherwise the data might be invalid (or someone input the wrong button presses into the database).
+
+---
+
+## Example
+
+### Input
+```
+151 3
++10 ×3 +10
+```
+
+### Output
+```
+37
+```
