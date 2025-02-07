@@ -7,10 +7,14 @@
 * [Lesson 27/11](lesson01)
 
 ## HWs
-* [HW 27/11](hw01)
-* [HW 04/12](hw02)
-* [HW 11/12](hw03)
-* [HW 18/12](hw04)
+* [HW 01](hw01)
+* [HW 02](hw02)
+* [HW 03](hw03)
+* [HW 04](hw04)
+* [HW 05](hw05)
+* [HW 06](hw06)
+* [HW 07](hw07)
+* [HW 09](hw09)
 
 ## Lectures
 ### Youtube
